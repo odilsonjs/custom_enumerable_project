@@ -12,4 +12,9 @@ class Array
       yield(elem)
     end
   end
+  def my_each_with_index
+    self.each_with_index do |elem, idx|
+      yield(elem, idx)
+    end
+  end
 end
