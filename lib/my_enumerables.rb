@@ -17,4 +17,7 @@ class Array
       yield(elem, idx)
     end
   end
+  def my_select
+    self.select { |value| yield(value) }
+  end
 end
