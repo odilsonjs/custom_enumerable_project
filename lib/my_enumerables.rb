@@ -20,4 +20,7 @@ class Array
   def my_select
     self.select { |value| yield(value) }
   end
+  def my_all?
+    self.all? { |value| yield(value) }
+  end
 end
