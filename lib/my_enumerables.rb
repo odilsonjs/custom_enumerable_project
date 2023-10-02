@@ -23,4 +23,25 @@ class Array
   def my_all?
     self.all? { |value| yield(value) }
   end
+  def my_any?
+    self.any? { |value| yield(value) }
+  end
+
+  def my_none?
+    self.none? { |value| yield(value) }
+  end
+
+  def my_count
+    block_given? ? self.count { |value| yield(value) } : self.size
+  end
+
+  def my_map
+    self.map { |value| yield(value) }
+  end
+
+
+  def my_inject(i=0)
+    self.reduce(i) { |sum, value| yield(sum, value) }
+  end
+  
 end
